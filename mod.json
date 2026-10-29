@@ -1,0 +1,40 @@
+{
+  "geode": "5.11.2",
+  "gd": {
+    "win": "2.2081"
+  },
+  "id": "community.strong-input-buffer",
+  "name": "Strong Input Buffer",
+  "version": "v1.0.0",
+  "developer": "Community Project",
+  "description": "Configurable early jump and orb input buffer. Saves short taps that happen just before a landing or orb. Supports both player icons and resets safely.",
+  "settings": {
+    "enabled": {
+      "type": "bool",
+      "name": "Enable Input Buffer",
+      "description": "Turn buffered jump rescue on or off. Original inputs always pass through to GD.",
+      "default": true
+    },
+    "window-ms": {
+      "type": "int",
+      "name": "Buffer Strength (milliseconds)",
+      "description": "How long an early tap is remembered. 40 ms = mild, 100 ms = strong, 160-250 ms = very strong. Large values can fire jumps you didn't intend.",
+      "default": 100,
+      "min": 0,
+      "max": 250,
+      "control": {
+        "slider": true,
+        "slider-step": 5,
+        "arrows": true,
+        "arrow-step": 5,
+        "input": true
+      }
+    },
+    "orb-buffer": {
+      "type": "bool",
+      "name": "Buffer Orbs / Rings",
+      "description": "Replay an early released tap when an orb becomes touchable, as well as on a landing.",
+      "default": true
+    }
+  }
+}
